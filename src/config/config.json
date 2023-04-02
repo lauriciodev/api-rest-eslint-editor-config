@@ -1,0 +1,29 @@
+{
+  "development": {
+    "username": "root",
+    "password": "senhafacil@2030",
+    "database": "escola",
+    "host": "34.95.229.193",
+    "port": "3306",
+    "dialect": "mariadb",
+    "logging": true
+  },
+  "test": {
+    "username": "root",
+    "password": "senhafacil@2030",
+    "database": "escola",
+    "host": "34.95.229.193",
+    "port": "3306",
+    "dialect": "mariadb",
+    "logging": true
+  },
+  "production": {
+    "username": "root",
+    "password": "senhafacil@2030",
+    "database": "escola",
+    "host": "34.95.229.193",
+    "port": "3306",
+    "dialect": "mariadb",
+    "logging": true
+  }
+}
