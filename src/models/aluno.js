@@ -4,6 +4,12 @@ export default class Aluno extends Model {
   static init(sequelize) {
     super.init(
       {
+        id: {
+          type: Sequelize.INTEGER,
+          allowNull: false,
+          // autoIncrement: true,
+          primaryKey: true,
+        },
         nome: {
           type: Sequelize.STRING,
           allowNull: false,
