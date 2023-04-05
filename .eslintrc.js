@@ -17,5 +17,7 @@ module.exports = {
     "import/no-named-as-default": "off",
     "import/no-named-as-default-member": "off",
     "import/first": "off",
+    "no-param-reassign": "off",
+    "comma-dangle": "off",
   },
 };

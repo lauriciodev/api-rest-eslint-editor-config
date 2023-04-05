@@ -1,5 +1,5 @@
 import Sequelize from "sequelize";
-import databaseconf from "../config/index";
+import databaseconf from "../config/config";
 import aluno from "../models/aluno";
 
 const models = [aluno];
