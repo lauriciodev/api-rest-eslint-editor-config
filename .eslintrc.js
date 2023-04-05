@@ -19,5 +19,6 @@ module.exports = {
     "import/first": "off",
     "no-param-reassign": "off",
     "comma-dangle": "off",
+    "consistent-return": "off",
   },
 };

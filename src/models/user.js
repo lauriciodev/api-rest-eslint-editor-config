@@ -1,7 +1,7 @@
 import Sequelize, { Model } from "sequelize";
 import bcrypt from "bcryptjs";
 
-export default class Aluno extends Model {
+export default class User extends Model {
   static init(sequelize) {
     super.init(
       {
@@ -41,7 +41,7 @@ export default class Aluno extends Model {
       },
       {
         sequelize,
-        modelName: "alunos",
+        modelName: "users",
       }
     );
     this.addHook("beforeCreate", async (user) => {
