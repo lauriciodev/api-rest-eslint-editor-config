@@ -29,7 +29,7 @@ export default class Aluno extends Model {
           defaultValue: "",
         },
         password: {
-          type: Sequelize.STRING,
+          type: Sequelize.VIRTUAL,
           defaultValue: "",
           validate: {
             len: {
