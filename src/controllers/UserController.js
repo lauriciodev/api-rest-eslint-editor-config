@@ -4,7 +4,8 @@ class UserContronller {
   async store(req, res) {
     try {
       const novouser = await User.create(req.body);
-      return res.json(novouser);
+      const { nome, email } = novouser;
+      return res.json({ nome, email });
     } catch (erro) {
       return res.status(400).json({ erros: erro.errors.map((e) => e.message) });
     }
@@ -14,7 +15,7 @@ class UserContronller {
 
   async index(req, res) {
     try {
-      const users = await User.findAll();
+      const users = await User.findAll({ attributes: ["id", "nome", "email"] });
       return res.json(users);
     } catch (error) {
       return res.json(null);
@@ -31,7 +32,8 @@ class UserContronller {
           errors: "usuario não exite",
         });
       }
-      return res.json(users);
+      const { id, nome, email } = users;
+      return res.json({ id, nome, email });
     } catch (error) {
       return res.json(null);
     }
@@ -41,13 +43,7 @@ class UserContronller {
 
   async update(req, res) {
     try {
-      if (!req.params.id) {
-        return res.status(400).json({
-          errors: ["id não enviado"],
-        });
-      }
-
-      const user = await User.findByPk(req.params.id);
+      const user = await User.findByPk(req.userId);
       if (!user) {
         return res.status(400).json({
           errors: ["usuario não existe"],
@@ -55,7 +51,8 @@ class UserContronller {
       }
 
       const novosDados = await user.update(req.body);
-      return res.json(novosDados);
+      const { nome, email } = novosDados;
+      return res.json({ nome, email });
     } catch (erro) {
       return res.status(400).json({ erros: erro.errors.map((e) => e.message) });
     }
@@ -65,13 +62,13 @@ class UserContronller {
 
   async delete(req, res) {
     try {
-      if (!req.params.id) {
+      if (!req.userId) {
         return res.status(400).json({
           errors: ["id não enviado"],
         });
       }
 
-      const user = await User.findByPk(req.params.id);
+      const user = await User.findByPk(req.userId);
       if (!user) {
         return res.status(400).json({
           errors: ["usuario não existe"],
