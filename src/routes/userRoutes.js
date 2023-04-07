@@ -8,10 +8,10 @@ const router = new Router();
 // router.get("/", loginRequired, UserController.index); // lista usuarios
 // router.get("/:id", UserController.show); // lista usuario
 
-router.post("/", UserController.store); // criar usuario
+// router.post("/", UserController.store); // criar usuario
 
-router.put("/", loginRequired, UserController.update); // editar usuario
-router.delete("/", loginRequired, UserController.delete); // deletar usuario
+// router.put("/", loginRequired, UserController.update); // editar usuario
+// router.delete("/", loginRequired, UserController.delete); // deletar usuario
 
 export default router;
 

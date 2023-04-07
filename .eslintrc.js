@@ -21,5 +21,7 @@ module.exports = {
     "comma-dangle": "off",
     "consistent-return": "off",
     "no-shadow": "off",
+    "no-unused-expressions": "off",
+    camelcase: "off",
   },
 };

@@ -44,4 +44,9 @@ export default class Aluno extends Model {
     );
     return this;
   }
+
+  // associando tabelas
+  static associate(models) {
+    this.hasMany(models.fotos, { foreignKey: "aluno_id" });
+  }
 }
