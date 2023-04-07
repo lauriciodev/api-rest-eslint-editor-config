@@ -20,5 +20,6 @@ module.exports = {
     "no-param-reassign": "off",
     "comma-dangle": "off",
     "consistent-return": "off",
+    "no-shadow": "off",
   },
 };

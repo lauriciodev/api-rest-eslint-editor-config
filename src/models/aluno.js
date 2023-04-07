@@ -6,15 +6,35 @@ export default class Aluno extends Model {
       {
         nome: {
           type: Sequelize.STRING,
-          allowNull: false,
+          defaultValue: "",
+          validate: {
+            len: {
+              args: [3, 30],
+              msg: "Nome deve ter entre 3 e 30 caracteres",
+            },
+          },
         },
         sobrenome: {
           type: Sequelize.STRING,
-          allowNull: false,
+          defaultValue: "",
+          validate: {
+            len: {
+              args: [3, 30],
+              msg: "Sobrenome deve ter entre 3 e 30 caracteres",
+            },
+          },
         },
         email: {
           type: Sequelize.STRING,
-          allowNull: false,
+          defaultValue: "",
+          unique: {
+            msg: "email já existe",
+          },
+          validate: {
+            isEmail: {
+              msg: "Email inválido",
+            },
+          },
         },
       },
       {
