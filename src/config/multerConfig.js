@@ -2,7 +2,7 @@ import { extname, resolve } from "path";
 import multer from "multer";
 
 const destino = resolve(__dirname, "..", "..", "uploads", "images");
-const aleatorio = () => Math.floor(Math.random() * 12000 + 20002);
+const aleatorio = Math.floor(Math.random() * 12000 + 20002);
 
 export default {
   fileFilter: (req, file, cb) => {

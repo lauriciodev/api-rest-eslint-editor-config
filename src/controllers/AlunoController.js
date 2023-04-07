@@ -11,7 +11,7 @@ class AlunoContronller {
       ],
       include: {
         model: Foto,
-        attributes: ["filename"],
+        attributes: ["url", "filename"],
       },
     });
     res.json(alunos);
@@ -44,7 +44,7 @@ class AlunoContronller {
         ],
         include: {
           model: Foto,
-          attributes: ["filename"],
+          attributes: ["url", "filename"],
         },
       });
 
